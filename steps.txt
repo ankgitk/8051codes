@@ -1,0 +1,39 @@
+INITIAL SETUP
+1) Install the drivers:  
+"Setup For HugePine.exe"
+  	"Hl-340.exe"
+  	win7 - "PL2303_Proliﬁc_DriverInstaller_v110.exe"
+  	USBSim9.0 - “Setup.exe" 
+2) Copy the Provided header[p89v51rx2.h] to “C:\Keil_v5\C51\INC\Philips" 
+3) Open Keil uVision IDE.
+ 4) Select Project>New uVision Project 
+5) From the Dropdown menu Select Legacy Device Database 
+6) Search for P89V51RD2. Select and press OK. 
+7) Click Yes 
+8) Right Click 'Target1'. Select Options For Target ‘Target1'. 
+9) GoTo Output Tab. Check 'Create HEX File' tickbox. 
+10) Expand ‘Target1' 
+11) Right Click 'Source Group 1’. 
+12) Add New Item to Group 'Source Group 1’. 
+13) Choose C ﬁle. Enter a name click Add. 
+POST CODING STEPS
+14) Press F7 to build the Code and generate hex ﬁle. [Hex File Generated in ‘/Objects'] 
+15) Connect the USB cable to the PORT.
+16) Attach the Power Adapter of the board in the right pin. 
+17) Press the PowerOn switch on the board.[The Large LED must turn on] 
+18) Right click on windows button in the bottom left corner. 
+19) Select Device Manager, Expand 'ports(COM & LPT)', Look at the COM number in the  ﬁeld for device. 
+20) Launch FlashMagic. 
+21) Click on Select. Choose 89V51RD2. 
+22) Choose Appropriate COM Port from step 20. 
+23)  Baud Rate : 9600  Interface : None(ISP)  in Firmware section, browse and select your generated HEX ﬁle  in Options make sure only the following are ticked - 'Verify after Programming', 'Prog   Clocks Bit’ 
+24) Click on Options>Advanced Options>Harware Conﬁg 
+25) Uncheck use DTR to control RST. Click OK 
+26) Click on ISP menu 
+27) Select Read device Signature. 
+28) When Asked to reset ISP, Press the RESET button on your board. The window will load  some value in the ﬁelds. 
+29) Click Close
+30) Check "Erase blocks used by Firmware” 
+31) Click “Start" 
+32) After the process is ﬁnished, Power oﬀ the Board using the power button, unplug the  USB. 
+33) Power On the board. 
